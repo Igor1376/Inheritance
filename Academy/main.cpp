@@ -125,7 +125,7 @@ public:
 	{
 		cout << "SDestructor:\t" << this << endl;
 	}
-	void info()const
+	void info()const override
 	{
 		Human::info();
 		cout << speciality << " " << group << " " << rating << " " << attendance << endl;
@@ -168,6 +168,13 @@ public:
 	{
 		cout << "TDestructor:\t" << this << endl;
 	}
+	void info() const
+	{
+		Human::info();
+		cout << speciality << " " << experience << " years" << endl;
+	}
+
+
 }; std::ostream& operator << (std::ostream& os, const Teacher& obj)
 {
 	return os << (Human&)obj << " " << obj.get_speciality() << " " << obj.get_experience() << " y/o ";
