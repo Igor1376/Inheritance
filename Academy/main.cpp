@@ -61,7 +61,7 @@ std::ostream& operator <<(std::ostream& os, const Human& obj)
 	return os << obj.get_last_name() << " " << obj.get_first_name() << " " << obj.get_age() << " y/o ";
 }
 
-std::ostream& operator << 
+
 
 #define STUDENT_TAKE_PARAMETERS const std ::string& speciality, const std ::string& group, double rating, double attendance
 #define STUDENT_GIVE_PARAMETERS speciality, group, rating, attendance
@@ -242,9 +242,6 @@ void main()
 		cout << delimiter << endl;
 	}
 
-	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++)
-	{
-		delete group[i];
-	}
+	
 
 }
