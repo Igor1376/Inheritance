@@ -175,7 +175,8 @@ public:
 	}
 
 
-}; std::ostream& operator << (std::ostream& os, const Teacher& obj)
+}; 
+std::ostream& operator << (std::ostream& os, const Teacher& obj)
 {
 	return os << (Human&)obj << " " << obj.get_speciality() << " " << obj.get_experience() << " y/o ";
 }
