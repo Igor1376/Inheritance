@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 #include<string>
 
 using namespace std;
@@ -217,6 +218,11 @@ std::ostream& operator << (std::ostream& os, const Graduate& obj)
 }
 //#define INHERITANCE_CHECK
 
+void Print(const Human* group[], const int n)
+{
+
+}
+
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -239,14 +245,16 @@ void main()
 		new Graduate("Schreder", "Hank", 40, "Criminalistic", "OBN", 80, 90, "How to catch Heisenberg"),
 		new Student("Vercetty", "Tommy", 30, "Theft", "Vice" ,97, 98)
 	};
+
+	Print (group, sizeof(group) / sizeof  
 	cout << delimiter << endl;
 	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++)
 	{
 		//group[i]->info();
 		cout << typeid(*group[i]).name() << " :\t ";
-		if (typeid(group[i]) == typeid(Student))cout << dynamic_cast<Student*>(group[i]) << endl;
-		if (typeid(group[i]) == typeid(Teacher))cout << dynamic_cast<Teacher*>(group[i]) << endl;
-		if (typeid(group[i]) == typeid(Graduate))cout << dynamic_cast<Graduate*>(group[i]) << endl;
+		if (typeid(*group[i]) == typeid(Student))cout << *dynamic_cast<Student*>(group[i]) << endl;
+		if (typeid(*group[i]) == typeid(Teacher))cout << *dynamic_cast<Teacher*>(group[i]) << endl;
+		if (typeid(*group[i]) == typeid(Graduate))cout << *dynamic_cast<Graduate*>(group[i]) << endl;
 		cout << delimiter << endl;
 	}
 
