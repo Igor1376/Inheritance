@@ -410,5 +410,6 @@ void main()
 	Human** group = Load("group.txt", n);
 	Print(group, n);
 	Clear(group, n);
+	
 
 }
